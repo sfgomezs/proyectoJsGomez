@@ -62,43 +62,43 @@ switch (divisapag) {
     
     case 1:
         costo = precioClp(divisacom.valor, cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " Pesos Chilenos.");
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} Pesos Chilenos.`);
         break;
     
     case 2:
         divisapag = dolarus;   
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " " + divisapag.nombre + ".");   
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);   
         break;
 
     case 3:
         divisapag = euro;  
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " " + divisapag.nombre + ".");     
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);      
         break;
 
     case 4:
         divisapag = pesomex;  
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " " + divisapag.nombre + ".");     
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);      
         break;    
     
     case 5:
         divisapag = pesoarg;  
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " " + divisapag.nombre + ".");     
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);      
         break; 
         
     case 6:
         divisapag = pesocol;
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " " + divisapag.nombre + ".");       
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);        
         break;   
         
     case 7:
         divisapag = sol;     
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
-        alert ("Por la compra de " + cantidad + " " + divisacom.nombre + " debe pagar " + costo + " " + divisapag.nombre + ".");  
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`); 
         break;
 
     default:
