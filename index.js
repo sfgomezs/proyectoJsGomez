@@ -9,15 +9,13 @@ let costo = 0;
 
 /* funcion para calcular precio en pesos chilenos */
 const precioClp = (cambio, cantidad) => {
-    let precio = 0;
-    precio = cambio*cantidad;
+    let precio = cambio*cantidad;
     return precio;
 }
 
 /* funcion para calcular precio en otras divisas */
 const precioDiv = (divCom, divPag, cantidad) => {
-    let precio = 0;
-    precio = (cantidad*divCom)/divPag;
+    let precio = (cantidad*divCom)/divPag;
     return precio;
 }
 
