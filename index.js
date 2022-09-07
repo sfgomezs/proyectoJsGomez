@@ -1,11 +1,19 @@
 /* tasas de cambio a peso chileno */
-const dolarus = {nombre: "Dolares US", valor: 882.51};
-const euro = {nombre: "Euros", valor: 882.35};
-const pesomex = {nombre: "Pesos Mexicanos", valor: 44.06};
-const pesoarg = {nombre: "Pesos Argentinos", valor: 6.38};   
-const pesocol = {nombre: "Pesos Colombianos", valor: 0.20};
-const sol = {nombre: "Soles Peruanos", valor: 230.29};
-let costo = 0;
+
+class Divisa{
+    constructor(nombre, valor){
+        this.nombre = nombre.toUpperCase();
+        this.valor = parseFloat(valor);
+    }
+}
+ 
+const divisas = [];
+divisas.push(new Divisa("Dolares US", 882.51));
+divisas.push(new Divisa("Euros", 882.35));
+divisas.push(new Divisa("Pesos Mexicanos", 44.06));
+divisas.push(new Divisa("Pesos Argentinos", 6.38));
+divisas.push(new Divisa("Pesos Colombianos", 0.20));
+divisas.push(new Divisa("Soles Peruanos", 230.29));
 
 /* funcion para calcular precio en pesos chilenos */
 const precioClp = (cambio, cantidad) => {
@@ -20,31 +28,31 @@ const precioDiv = (divCom, divPag, cantidad) => {
 }
 
 /*divisa que desea comprar */
-let divisacom = prompt("Por favor seleccione la divisa que desea adquirir: 1-Dolar US / 2-Euro / 3-Peso Mex / 4-Peso Arg / 5-Peso Col / 6-Sol");
+let divisacom = prompt(`Por favor seleccione la divisa que desea adquirir: 1-${divisas[0].nombre} / 2-${divisas[1].nombre} / 3-${divisas[2].nombre} / 4-${divisas[3].nombre} / 5-${divisas[4].nombre} / 6-${divisas[5].nombre}`);
 divisacom = parseInt(divisacom);
 switch (divisacom) {
     case 1:
-        divisacom = dolarus;      
+        divisacom = divisas[0];      
         break;
 
     case 2:
-        divisacom = euro;      
+        divisacom = divisas[1];      
         break;
 
     case 3:
-        divisacom = pesomex;      
+        divisacom = divisas[2];      
         break;    
     
     case 4:
-        divisacom = pesoarg;      
+        divisacom = divisas[3];      
         break; 
         
     case 5:
-        divisacom = pesocol;      
+        divisacom = divisas[4];      
         break;   
         
     case 6:
-        divisacom = sol;      
+        divisacom = divisas[5];      
         break;
 
     default:
@@ -62,41 +70,41 @@ switch (divisapag) {
     
     case 1:
         costo = precioClp(divisacom.valor, cantidad);
-        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} Pesos Chilenos.`);
+        alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} PESOS CHILENOS.`);
         break;
     
     case 2:
-        divisapag = dolarus;   
+        divisapag = divisas[0]; 
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
         alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);   
         break;
 
     case 3:
-        divisapag = euro;  
+        divisapag = divisas[1]; 
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
         alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);      
         break;
 
     case 4:
-        divisapag = pesomex;  
+        divisapag = divisas[2];
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
         alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);      
         break;    
     
     case 5:
-        divisapag = pesoarg;  
+        divisapag = divisas[3]; 
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
         alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);      
         break; 
         
     case 6:
-        divisapag = pesocol;
+        divisapag = divisas[4];
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
         alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`);        
         break;   
         
     case 7:
-        divisapag = sol;     
+        divisapag = divisas[5];    
         costo = precioDiv(divisacom.valor, divisapag.valor ,cantidad);
         alert (`Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`); 
         break;
